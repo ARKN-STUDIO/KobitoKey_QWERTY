@@ -68,7 +68,7 @@
 
     input-processors =
             <&sensor_rotation_left>,
-            <&zip_x_scaler 0 1>,
+            <&zip_x_scaler 1 12>,
             <&zip_y_scaler 1 15>,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,
@@ -93,12 +93,14 @@
 
 &zip_temp_layer {
     excluded-positions = <
-        6
-        7
-        8
+        16
+        17
+        18
         30
         32
         33
+        34
+        38
         39
     >;
 };
