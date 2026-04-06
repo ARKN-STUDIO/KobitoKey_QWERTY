@@ -68,8 +68,8 @@
 
     input-processors =
             <&sensor_rotation_left>,
-            <&zip_x_scaler 1 12>,
-            <&zip_y_scaler 1 15>,
+            <&zip_x_scaler 1 10>,
+            <&zip_y_scaler 1 14>,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;
@@ -79,7 +79,7 @@
   /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
     compatible = "zmk,input-processor-temp-layer";
     #input-processor-cells = <2>;
-    require-prior-idle-ms = <350>; /* キー押下後、何msオートマウスレイヤに入らないようにするか、誤爆防止 */
+    require-prior-idle-ms = <50>; /* キー押下後、何msオートマウスレイヤに入らないようにするか、誤爆防止 */
   };
 };
 
@@ -88,7 +88,7 @@
 
     input-processors =
         <&sensor_rotation_right>,
-        <&zip_temp_layer 3 5000>; /* オートマウスレイヤーの指定とトラボ操作及びマウスボタン押下後に滞留する時間 */
+        <&zip_temp_layer 3 700>; /* オートマウスレイヤーの指定とトラボ操作及びマウスボタン押下後に滞留する時間 */
 };
 
 &zip_temp_layer {
@@ -96,11 +96,7 @@
         16
         17
         18
-        30
-        32
-        33
         34
         38
-        39
     >;
 };
